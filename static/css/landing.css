@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0a;
+  color: white;
+  min-height: 100vh;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.stat-box {
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 120px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.features {
+  margin: 3rem auto;
+  max-width: 800px;
+}
+
+.feature {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.feature p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.highlight {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.highlight-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-top: 0.5rem;
+}
+
+.auth-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.auth-button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #0a0a0a;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  min-width: 150px;
+  text-align: center;
+}
+
+.auth-button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .auth-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}

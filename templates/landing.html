@@ -2,14 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to Notepad</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap">
+<link rel="stylesheet" href="{{ url_for ('static', filename="css/landing.css") }}">
 </head>
 <body>
   <div class="container">
-    <h1>Welcome to Notepad</h1>
-    <a href="{{ url_for('register') }}">Register</a> |
-    <a href="{{ url_for('login') }}">Login</a>
+    <header>
+      <h1>CHANGE THE WAY YOU NOTE</h1>
+      <p class="subtitle">Write the story of your life </p>
+
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-value">NOTE 2.0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">one billion uncountable users</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">Users</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h2>MAKE YOUR NOTES, WELL-WRITTEN</h2>
+
+      <div class="features">
+        <div class="feature">
+          <p>We dey plant better future with our words. Carry your gbege ideas waka—no matter where you dey—make your creative side dey jolly steady</p>
+        </div>
+
+        <div class="feature">
+          <p> Start writing the story of you life today.</p>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <h3>NOTEPAD C-24 IS HERE</h3>
+        <div class="highlight-value">NOTE 12</div>
+      </div>
+
+      <div class="auth-links">
+        <a href="{{ url_for('register') }}" class="auth-button">Register</a>
+        <a href="{{ url_for('login') }}" class="auth-button">Login</a>
+      </div>
+    </main>
   </div>
 </body>
 </html>
