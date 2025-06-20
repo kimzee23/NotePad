@@ -24,7 +24,7 @@ def create_app():
     from routes.note_routes import note_bp
 
     app.register_blueprint(auth_bp, url_prefix="/api/v1/auth")
-    app.register_blueprint(note_bp, url_prefix="/api/v1/note")
+    app.register_blueprint(note_bp, url_prefix="/api/v1/notes")
 
 
     # Routes for frontend pages

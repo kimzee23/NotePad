@@ -32,9 +32,20 @@ class UserService:
 
     @staticmethod
     def authenticate_user(data: UserLoginRequest) -> UserResponse:
+        print("🔍 Trying to log in with email:", data.email)
+
         user = UserRepository.find_by_email(data.email)
+        if not user:
+            print(" No user found with email:", data.email)
+        else:
+            print(" Found user:", user.email)
+            print(" Checking password...")
+
         if not user or not check_password_hash(user.password, data.password):
+            print(" Password mismatch or user not found")
             raise ValueError("Invalid email or password")
+
+        print(" Password matched! Logging in:", user.username)
 
         return UserResponse(
             id=user.id,
@@ -43,9 +54,7 @@ class UserService:
             phone=user.phone,
             createdAt=user.createdAt,
             updatedAt=user.updatedAt
-
         )
-
 
     @staticmethod
     def get_user_by_id(user_id: str) -> UserResponse | None:

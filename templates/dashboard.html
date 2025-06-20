@@ -1,23 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Dashboard - Notepad</title>
-  <link rel="stylesheet" href="{{ url_for ("static",filename="css/style.css") }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    .toolbar button,
+    .toolbar select,
+    .toolbar input[type="color"] {
+      margin-right: 5px;
+      padding: 5px 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .note-input {
+      border: 1px solid #ccc;
+      padding: 10px;
+      min-height: 150px;
+      outline: none;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .note-item {
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+    }
+  </style>
 </head>
 <body>
   <div class="dashboard-container">
     <h2>Welcome to Your Notepad</h2>
     <button id="logoutBtn">Logout</button>
 
-    <div class="note-form">
-      <h3>Create New Note</h3>
-      <form id="noteForm">
-        <input type="text" id="noteTitle" placeholder="Title" required><br>
-        <textarea id="noteContent" placeholder="Write something..." required></textarea><br>
-        <button type="submit">Save Note</button>
-      </form>
+    <div class="toolbar" style="margin: 15px 0;">
+      <button type="button" id="boldBtn"><b>B</b></button>
+      <button type="button" id="italicBtn"><i>I</i></button>
+
+      <select id="fontSizeSelect">
+        <option value="">Font Size</option>
+        <option value="1">10px</option>
+        <option value="2">13px</option>
+        <option value="3">16px</option>
+        <option value="4">18px</option>
+        <option value="5">24px</option>
+        <option value="6">32px</option>
+        <option value="7">48px</option>
+      </select>
+
+      <select id="fontFamilySelect">
+        <option value="">Font Family</option>
+        <option value="Arial">Arial</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Verdana">Verdana</option>
+      </select>
+
+      <input type="color" id="colorPicker" title="Text Color" />
     </div>
+
+    <form id="noteForm">
+      <input id="noteTitle" placeholder="Title" />
+      <div
+        id="noteContent"
+        class="note-input"
+        contenteditable="true"
+        data-placeholder="Write your note..."
+        style="white-space: pre-wrap;"
+      ></div>
+      <button type="submit">Save</button>
+    </form>
+
+    <button id="saveAsBtn">Save As</button>
+    <button id="printBtn">Print</button>
+   <button id="downloadPdfBtn">Download as PDF</button>
+
 
     <div class="notes-list">
       <h3>Your Notes</h3>
@@ -25,6 +89,6 @@
     </div>
   </div>
 
-  <script src="{{ url_for ("static",filename="js/dashboard.js") }}"></script>
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 </body>
 </html>

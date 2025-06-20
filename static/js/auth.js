@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         msg.style.color = "green";
         msg.textContent = "Registration successful!";
         setTimeout(() => {
-          window.location.href = "/login.html";
+          window.location.href = "/login";
         }, 1000);
       } else {
         msg.textContent = result.msg || "Something went wrong!";
@@ -61,7 +61,7 @@ if (loginForm) {
       msg.textContent = "Login successful!";
       localStorage.setItem("user_id", result.user_id);
       setTimeout(() => {
-        window.location.href = "/dashboard.html";
+        window.location.href = "/dashboard";
       }, 1000);
     } else {
       msg.textContent = result.msg || "Login failed!";
