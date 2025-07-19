@@ -3,6 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
   if (form) {
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
+       const phone = document.getElementById("phone").value.trim();
+      const phoneRegex = /^\d{11}$/;
+
+      if (!phoneRegex.test(phone)) {
+        const msg = document.getElementById("message");
+        msg.style.color = "red";
+        msg.textContent = "Phone number must be exactly 11 digits.";
+        return;
+      }
 
       const data = {
         username: document.getElementById("username").value,

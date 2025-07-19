@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const printBtn = document.getElementById("printBtn");
   const downloadPdfBtn = document.getElementById("downloadPdfBtn");
 
-  // Formatting buttons
   document.getElementById("boldBtn").addEventListener("click", () => {
     document.execCommand("bold");
     noteContent.focus();
@@ -96,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (res.ok) {
         alert("Note saved!");
         form.reset();
-        noteContent.innerHTML = ""; // clear contenteditable div
+        noteContent.innerHTML = "";
         loadNotes();
       } else {
         alert(result.msg || "Error saving note");
@@ -106,8 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Error saving note, check console.");
     }
   });
-
-  // Save As - save a new note with a different title
   saveAsBtn.addEventListener("click", () => {
     const title = prompt("Enter new title for Save As:");
     const content = noteContent.innerHTML.trim();

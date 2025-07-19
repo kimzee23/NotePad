@@ -58,6 +58,7 @@ h3 {
   cursor: pointer;
   transition: all 0.2s ease;
   min-width: 40px;
+    color: #0a0a0a;
 }
 
 .format-button:hover {
