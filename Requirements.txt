@@ -1,62 +1,8 @@
-Functional Requirements
-User Authentication
-•	Users can register with email and password.
-•	Users can log in to access their notes.
-•	Sessions are managed using Flask sessions or tokens.
-•	Optional future feature: Google Sign-In.
-Note Management
-•	Users can create a new note (title + content).
-•	Users can view all their notes.
-•	Users can update existing notes.
-•	Users can delete notes.
-•	Notes are timestamped (createdAt, updatedAt).
-Note Data
-•	Each note includes:
-o	title: string
-o	content: string
-o	user_id: ID of the owner
-o	createdAt, updatedAt: datetime
-User Data
-•	User fields:
-o	email: string
-o	password: hashed string
-o	createdAt: datetime
-________________________________________
-API Endpoints
-Users
-•	POST /api/v1/users/register – Register a new user.
-•	POST /api/v1/users/login – Log in a user.
-Notes
-•	POST /notes – Create a new note.
-•	GET /notes/<user_id> – Retrieve all notes for a user.
-•	PUT /notes/<note_id> – Update a note.
-•	DELETE /notes/<note_id> – Delete a note.
-________________________________________
- Backend Architecture
-•	Framework: Flask
-•	Database: MongoDB
-•	Layers:
-o	Models: Represent data structure for Notes and Users.
-o	DTOs: Handle request/response schema.
-o	Repositories: Communicate with MongoDB.
-o	Services: Business logic.
-o	Controllers (Routes): Handle incoming requests.
-________________________________________
- Frontend Features
-•	Landing Page with login/register.
-•	Dashboard to display and manage notes.
-•	JS-based interaction with the backend using fetch or Axios.
-•	Redirection after login/registration to the dashboard.
-________________________________________
-Testing
-•	Unit tests for:
-o	User registration and login
-o	Note creation, update, retrieval, deletion
-•	Tools used: Postman (for manual testing)
-________________________________________
- Future Features (Optional/Planned)
-•	Search notes by keyword.
-•	Tagging or categorizing notes.
-•	Printing/exporting notes as PDF.
-________________________________________
-
+pydantic~=2.11.7
+Flask~=3.1.1
+flask-cors~=6.0.1
+dotenv~=0.9.9
+python-dotenv~=1.1.0
+bson~=0.5.10
+pymongo~=4.13.2
+Werkzeug~=3.1.3
